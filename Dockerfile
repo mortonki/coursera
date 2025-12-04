@@ -2,6 +2,9 @@ FROM jupyter/minimal-notebook
 
 COPY . /home/jovyan/work
 
+# Install Python packages
+RUN pip install --no-cache-dir scikit-learn pandas matplotlib seaborn scipy piplite statsmodels js
+
 # Expose Jupyter to OpenShift’s default port
 EXPOSE 8080
 
